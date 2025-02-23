@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s;
+    aspect-ratio: 1 / 1; /* Make the card a square */
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the card */
+    transform: translate(-50%, -50%);
+}
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+.card p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+.card a {
+display: inline-block;
+margin-top: 10px;
+padding: 8px 16px;
+background: #414344;
+color: #ffffff;
+text-decoration: none;
+border-radius: 4px;
+font-size: 14px;
+transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng cho hover */
+}
+
+.card a:hover {
+background: #3d3e40;
+transform: translateY(-5px); /* Nâng nhẹ lên khi hover */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ khi hover */
+}

@@ -1,0 +1,8 @@
+/* CSS cho thông báo lỗi */
+.alert-danger {
+    background-color: #f8d7da !important;  /* Màu đỏ nhạt */
+    color: #721c24 !important;  /* Màu chữ đỏ đậm */
+    font-size: 14px;  /* Kích thước chữ nhỏ hơn */
+    padding: 5px 10px;  /* Khoảng cách bên trong nhỏ hơn */
+    border-radius: 4px;  /* Làm tròn góc nhẹ */
+}

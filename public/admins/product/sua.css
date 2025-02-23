@@ -1,0 +1,324 @@
+ /* Cấu trúc tổng thể của trang */
+ .content-header {
+    background: linear-gradient(135deg, #2e2e44, #1c1c28);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Chia layout thành 2 phần */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+    background-color: #1c1c28;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.left, .right {
+    background-color: #2e2e44;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Tiêu đề bảng */
+h3 {
+    text-align: center;
+    color: #00c3ff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Form input */
+.form-control {
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 12px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+/* Input focus */
+.form-control:focus {
+    border-color: #00c3ff;
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
+}
+
+/* Button */
+.btn-primary {
+    background-color: #00c3ff;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0066cc;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
+}
+
+/* Nút chỉnh sửa */
+.btn-edit {
+    background-color: #ff9800;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.btn-edit:hover {
+    background-color: #f57c00;
+    transform: translateY(-4px);
+}
+
+/* Ảnh đại diện */
+.image_avatar_product {
+    max-width: 180px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.image_avatar_product:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Ảnh chi tiết */
+.image_detail_product {
+    max-width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.image_detail_product:hover {
+    transform: scale(1.05);
+}
+
+/* Select2 */
+.select2-container .select2-selection--single {
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 15px;
+    background-color: #2e2e44;
+    color: #fff;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.select2-container .select2-selection--single:focus {
+    border-color: #00c3ff;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #2e2e44;
+    color: #00c3ff;
+}
+
+tr:hover {
+    background-color: #333;
+}
+
+/* Ảnh preview */
+.preview-images {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.preview-images img {
+    max-width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Thay đổi màu nền cho các trường nhập liệu */
+.form-control, .form-control-file, .select2-container .select2-selection--single {
+background-color: #2c2f3b; /* Màu nền tối, sang trọng */
+color: #fff; /* Chữ màu trắng để dễ đọc */
+border: 1px solid #444; /* Viền màu xám tối */
+border-radius: 10px;
+padding: 12px;
+font-size: 14px;
+transition: all 0.3s ease;
+}
+
+/* Thay đổi màu khi focus vào các trường nhập liệu */
+.form-control:focus, .select2-container .select2-selection--single:focus {
+background-color: #383c48; /* Màu nền tối hơn khi focus */
+border-color: #00c3ff; /* Viền màu xanh sáng */
+box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
+}
+
+/* Thanh chọn file (input type="file") */
+.form-control-file {
+background-color: transparent; /* Làm nền trong suốt cho các input file */
+color: #fff;
+border: 1px solid #444;
+padding: 10px;
+}
+
+/* Thanh nhập text (textarea) */
+textarea.form-control {
+background-color: #2c2f3b;
+color: #fff;
+border: 1px solid #444;
+padding: 12px;
+font-size: 14px;
+border-radius: 10px;
+resize: vertical;
+transition: all 0.3s ease;
+}
+
+/* Thanh nhập nội dung focus */
+textarea.form-control:focus {
+background-color: #383c48;
+border-color: #00c3ff;
+box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
+}
+
+
+/* Các trường nhập liệu với nền tối và chữ tối */
+.form-control, .form-control-file, .select2-container .select2-selection--single {
+background-color: #2c2f3b; /* Nền tối */
+color: #999; /* Chữ màu xám sáng để dễ nhìn */
+border: 1px solid #444; /* Viền màu xám tối */
+border-radius: 10px;
+padding: 12px;
+font-size: 14px;
+transition: all 0.3s ease;
+}
+
+/* Khi focus vào trường nhập liệu */
+.form-control:focus, .select2-container .select2-selection--single:focus {
+background-color: #383c48; /* Nền tối hơn khi focus */
+color: #fff; /* Chữ chuyển thành màu trắng khi focus */
+border-color: #00c3ff; /* Viền xanh sáng khi focus */
+box-shadow: 0 0 10px rgba(0, 195, 255, 0.3); /* Hiệu ứng bóng */
+}
+
+/* Thanh nhập nội dung textarea */
+textarea.form-control {
+background-color: #2c2f3b; /* Nền tối */
+color: #999; /* Chữ màu xám sáng */
+border: 1px solid #444; /* Viền tối */
+padding: 12px;
+font-size: 14px;
+border-radius: 10px;
+resize: vertical;
+transition: all 0.3s ease;
+}
+
+/* Khi focus vào textarea */
+textarea.form-control:focus {
+background-color: #383c48; /* Nền tối hơn khi focus */
+color: #fff; /* Chữ chuyển thành màu trắng khi focus */
+border-color: #00c3ff; /* Viền xanh sáng */
+box-shadow: 0 0 10px rgba(0, 195, 255, 0.3); /* Hiệu ứng bóng */
+}
+
+
+
+/* Select2 tags styles */
+.select2-container .select2-selection--multiple .select2-selection__choice {
+background-color: #6a4c9c !important; /* Nền sáng cho tag */
+color: #fff !important; /* Chữ trắng trong tag */
+border-radius: 25px;
+padding: 8px 16px;
+font-size: 16px;
+margin-right: 10px;
+margin-top: 6px;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+transition: all 0.3s ease;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__choice:hover {
+background-color: #00c3ff;
+transform: scale(1.1);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.select2-container .select2-selection--multiple .select2-selection__choice__remove {
+color: #fff;
+font-weight: bold;
+margin-left: 10px;
+position: relative;
+top: -2px;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__choice__remove:hover {
+color: #ff8c00;
+background-color: #34344a;
+border-radius: 50%;
+}
+
+/* Styling CKEditor */
+.ck-editor__editable_inline {
+background-color: #29293d !important;
+color: #e4e4e7 !important;
+padding: 16px;
+border-radius: 8px;
+border: 1px solid #414157;
+}
+
+.ck-editor__editable_inline:hover {
+border-color: #00c3ff;
+
+#detail-image-preview {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.preview-image {
+max-width: 150px;  /* Giới hạn kích thước tối đa của ảnh */
+max-height: 150px; /* Giới hạn chiều cao tối đa của ảnh */
+object-fit: contain;  /* Đảm bảo ảnh không bị méo */
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+
+}
+/* Select2: thay đổi màu nền và màu chữ thành trắng */
+.select2-container .select2-selection--single {
+background-color: #383c48;
+color: #ffffff; /* Màu chữ trắng */
+
+padding: 8px;
+border-radius: 4px;
+}
+
+/* Select2: màu chữ của mục đã chọn */
+.select2-container .select2-selection--single .select2-selection__rendered {
+color: #ffffff; /* Màu chữ trắng */
+}
+

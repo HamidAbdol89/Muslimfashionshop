@@ -1,0 +1,149 @@
+/* Điều chỉnh navbar và các item để hiển thị đúng vị trí */
+/* Giữ navbar cố định ở đầu trang */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 5px 20px;  /* Giảm padding trên và dưới */
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Căn giữa các mục theo chiều dọc */
+  line-height: 1.2;
+  height: 100px; /* Đặt chiều cao cố định cho navbar */
+}
+body {
+  padding-top: 60px; /* Thêm khoảng cách từ top để tránh bị che khuất bởi navbar */
+}
+/* Điều chỉnh các liên kết trong navbar */
+.navbar-nav .nav-link {
+  font-size: 0.875rem; /* Kích thước chữ cho các mục */
+  padding: 10px 15px; /* Padding cho các mục để tạo không gian */
+  margin: 0; /* Loại bỏ margin mặc định */
+  text-transform: uppercase; /* Chữ hoa cho các mục */
+  font-weight: 500; /* Tăng độ đậm cho font chữ */
+}
+
+/* Căn chỉnh các mục navbar sao cho chúng không bị sai lệch */
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px; /* Khoảng cách giữa các mục */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-item {
+  display: inline-block;
+  position: relative;
+}
+
+/* Điều chỉnh các menu dropdown */
+.nav-item.dropdown {
+  position: relative;
+}
+
+.nav-item.dropdown .dropdown-menu {
+  min-width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; /* Ẩn dropdown mặc định */
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block; /* Hiển thị dropdown khi hover */
+}
+
+
+/* Điều chỉnh giỏ hàng và các mục tìm kiếm */
+.navbar-tool {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.search-button i {
+  font-size: 20px;
+  color: #494848;
+}
+
+/* Điều chỉnh vị trí giỏ hàng và tìm kiếm */
+.navbar-tool-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cart-count {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.navbar-tool-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 0.5rem;
+  color: black;
+}
+
+#cart-total {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+#cart-total:empty {
+  color: #999;
+}
+
+/* Các mục đăng nhập */
+.greeting small {
+  margin-right: 5px;
+}
+
+.greeting span {
+  margin-left: 5px;
+}
+
+.cart-count-animate {
+  animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
+#toggleDarkMode {
+  background-color: transparent; /* Nền trong suốt */
+  border: none;                  /* Loại bỏ viền */
+  cursor: pointer;               /* Con trỏ tay khi hover */
+  font-size: 24px;                /* Kích thước icon */
+  color: #333;                   /* Màu sắc của icon */
+  transition: color 0.3s ease;   /* Hiệu ứng chuyển màu */
+}
+
+#toggleDarkMode:hover {
+  color: #ffcc00;                /* Màu khi hover */
+}

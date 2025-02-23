@@ -1,0 +1,270 @@
+  /* Hiệu ứng fade-in */
+  .fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hiệu ứng hover cho card */
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    transition: all 0.4s ease-in-out;
+}
+
+/* Ripple Effect */
+.button-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.button-ripple:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.button-ripple:active:after {
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+}
+
+/* Nền gradient động */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.dynamic-bg {
+    background: linear-gradient(270deg, #1c1c28, #2e2e44, #00c3ff, #7b2cbf);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1c1c28, #2e2e44);
+    color: #e4e4e4;
+    padding: 20px;
+}
+
+.card {
+    background: linear-gradient(145deg, #292938, #1f1f2e);
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.7), -10px -10px 25px rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.5);
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #00c3ff, #007bff);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #007bff, #00c3ff);
+}
+
+#imagePreview {
+    margin-top: 15px;
+    width: 100%;
+    max-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.title-icon {
+    font-size: 20px;
+    color: #00c3ff;
+    margin-right: 10px;
+
+}
+
+#imagePreview {
+margin-top: 15px;
+max-width: 300px; /* Giới hạn chiều rộng tối đa */
+max-height: 200px; /* Giới hạn chiều cao tối đa */
+width: auto; /* Tự động thay đổi theo tỉ lệ */
+height: auto; /* Tự động thay đổi theo tỉ lệ */
+border-radius: 10px; /* Bo tròn góc */
+box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4); /* Hiệu ứng đổ bóng */
+display: none; /* Ẩn đi khi chưa có ảnh */
+}
+
+@keyframes fadeInUp {
+0% {
+opacity: 0;
+transform: translateY(30px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.card {
+background: linear-gradient(145deg, #292938, #1f1f2e);
+border-radius: 12px;
+box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(255, 255, 255, 0.05);
+padding: 20px;
+margin-bottom: 20px;
+transition: all 0.3s ease;
+animation: fadeInUp 0.5s ease-in-out;
+}
+
+.card:hover {
+box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.7), -10px -10px 25px rgba(255, 255, 255, 0.1);
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1c1c28, #2e2e44);
+    color: #e4e4e4;
+    padding: 20px;
+}
+
+.card {
+    background: linear-gradient(145deg, #292938, #1f1f2e);
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.7), -10px -10px 25px rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.5);
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #00c3ff, #007bff);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #007bff, #00c3ff);
+}
+
+.image-preview {
+max-width: 100%;
+max-height: 200px;
+border-radius: 8px;
+margin-top: 10px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+display: block;
+}
+
+.title-icon {
+    font-size: 20px;
+    color: #00c3ff;
+    margin-right: 10px;
+
+}
+
+
+
+@keyframes fadeInUp {
+0% {
+opacity: 0;
+transform: translateY(30px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.card {
+background: linear-gradient(145deg, #292938, #1f1f2e);
+border-radius: 12px;
+box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(255, 255, 255, 0.05);
+padding: 20px;
+margin-bottom: 20px;
+transition: all 0.3s ease;
+animation: fadeInUp 0.5s ease-in-out;
+}
+
+.card:hover {
+box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.7), -10px -10px 25px rgba(255, 255, 255, 0.1);
+}
+
+
+
+

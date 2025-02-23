@@ -1,0 +1,205 @@
+
+
+
+
+
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+/* Slider container */
+.slider-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+  margin: 0 auto;
+  padding: 0 10px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Slider card */
+.slider-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 320px;
+  min-width: 250px;
+  cursor: pointer;
+}
+
+.slider-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px var(--card-hover-shadow);
+}
+
+/* Card image */
+.slider-card .slider-image {
+  object-fit: cover;
+  width: 100%; /* Chiếm toàn bộ chiều rộng của container */
+  height: auto; /* Giữ tỷ lệ ảnh */
+  max-width: 100%; /* Giới hạn chiều rộng ảnh */
+  max-height: 200px; /* Giới hạn chiều cao ảnh */
+  transition: transform 0.3s ease;
+}
+
+
+.slider-card:hover .slider-image {
+  transform: scale(1.1);
+}
+
+
+.slider-card:hover .slider-overlay {
+  opacity: 1;
+}
+
+.slider-overlay a {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.slider-overlay a:hover {
+  color: var(--primary-color);
+}
+
+/* Card content */
+.slider-card h3.text-xl {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.slider-card h3.text-xl:hover {
+  color: var(--hover-color);
+}
+
+.slider-card p.text-sm {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.slider-card p.text-sm:hover {
+  color: #555;
+}
+
+/* Card responsive */
+@media (min-width: 640px) {
+  .slider-card {
+      width: 48%;
+  }
+}
+
+@media (min-width: 768px) {
+  .slider-card {
+      width: 32%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider-card {
+      width: 24%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .slider-card {
+      width: 18%;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.collection-title {
+  margin-top: 3rem; /* Tăng khoảng cách xuống dưới */
+  position: relative;
+  z-index: 1; /* Đảm bảo không bị che bởi các phần tử khác */
+}
+
+.masonry {
+  column-gap: 1rem; /* Khoảng cách giữa các cột */
+  column-count: 2; /* Số cột ở màn hình nhỏ */
+}
+
+@media (min-width: 768px) {
+  .masonry {
+      column-count: 3; /* Số cột ở màn hình trung bình */
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+      column-count: 4; /* Số cột ở màn hình lớn */
+  }
+}
+
+.masonry img {
+  width: 100%;
+  margin-bottom: 1rem; /* Khoảng cách giữa các ảnh */
+  display: block;
+}
+
+/* Hiệu ứng hover phóng to ảnh */
+.masonry img {
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Chuyển động mượt */
+}
+
+.masonry div:hover img {
+  transform: scale(1.1); /* Phóng to ảnh khi hover */
+  filter: brightness(1.2); /* Tăng độ sáng */
+}
+
+/* Hiệu ứng bo tròn và bóng đổ */
+.masonry div {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.masonry div:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Bóng đổ khi hover */
+}
+
+/* Overlay hiệu ứng */
+.masonry div {
+  position: relative; /* Định vị */
+  overflow: hidden;
+}
+
+.masonry div::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* Màu overlay tối */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.masonry div:hover::after {
+  opacity: 1; /* Hiện overlay khi hover */
+}

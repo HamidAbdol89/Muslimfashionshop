@@ -1,0 +1,227 @@
+    /* Đảm bảo màu chữ trong các trường nhập liệu và khi đang nhập là màu trắng */
+    body {
+        background: #1c1c28;
+        font-family: 'Inter', sans-serif;
+        color: #e4e4e7;
+    }
+    
+    .content-header {
+        background: linear-gradient(135deg, #6a00f4, #00c3ff);
+        padding: 20px;
+        border-radius: 12px;
+        color: white;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .form-container {
+        background: #2e2e44;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .form-container:hover {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+    
+    .form-group label {
+        font-size: 16px;
+        color: #c7c7d1;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+    
+    .form-control {
+        background: #29293d; /* Nền tối */
+        color: #ffffff;  /* Chữ trắng trong input */
+        border: 1px solid #414157;
+        border-radius: 10px;
+        padding: 12px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+        border-color: #8a2be2;
+        box-shadow: 0 0 5px #8a2be2;
+        color: #ffffff;  /* Chữ trắng khi focus */
+        background: #29293d; /* Nền vẫn là tối */
+    }
+    
+    .form-control-file {
+        background: #29293d;
+        color: #e4e4e7;
+        border: 1px solid #414157;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control-file:hover {
+        background: #34344a;
+        border-color: #00c3ff;
+    }
+    
+    .btn-submit {
+        background: linear-gradient(to right, #6a00f4, #00c3ff);
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 12px 20px;
+        border-radius: 10px;
+        border: none;
+        transition: all 0.3s ease;
+        font-size: 18px;
+    }
+    
+    .btn-submit:hover {
+        background: linear-gradient(to right, #8a2be2, #00e5ff);
+        transform: scale(1.05);
+    }
+    
+    /* Select2 tags styles */
+    .select2-container .select2-selection--multiple .select2-selection__choice {
+        background-color: #6a4c9c !important; /* Nền sáng cho tag */
+        color: #fff !important; /* Chữ trắng trong tag */
+        border-radius: 25px;
+        padding: 8px 16px;
+        font-size: 16px;
+        margin-right: 10px;
+        margin-top: 6px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .select2-container .select2-selection--multiple .select2-selection__choice:hover {
+        background-color: #00c3ff;
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .select2-container .select2-selection--multiple .select2-selection__choice__remove {
+        color: #fff;
+        font-weight: bold;
+        margin-left: 10px;
+        position: relative;
+        top: -2px;
+    }
+    
+    .select2-container .select2-selection--multiple .select2-selection__choice__remove:hover {
+        color: #ff8c00;
+        background-color: #34344a;
+        border-radius: 50%;
+    }
+    
+    /* Styling CKEditor */
+    .ck-editor__editable_inline {
+        background-color: #29293d !important;
+        color: #e4e4e7 !important;
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid #414157;
+    }
+    
+    .ck-editor__editable_inline:hover {
+        border-color: #00c3ff;
+    }
+    
+    /* Thêm hiệu ứng khi di chuyển qua các trường input */
+    .form-group input, .form-group select, .form-group textarea {
+        transition: all 0.3s ease;
+        color: #ffffff; /* Chữ trắng trong input, select, textarea */
+    }
+    
+    /* Các hiệu ứng hover */
+    .form-group input:hover, .form-group select:hover, .form-group textarea:hover {
+        border-color: #00c3ff;
+        background: #34344a;
+    }
+    
+    /* Phong cách cho placeholder trong trường nhập liệu */
+    .form-control::placeholder {
+        color: #b0b0b0; /* Màu chữ cho placeholder */
+    }
+    
+    /* Phong cách cho Select2 khi người dùng nhập vào */
+    .select2-container .select2-search--inline .select2-search__field {
+        background-color: #29293d !important;
+        color: #ffffff !important; /* Chữ trắng trong ô tìm kiếm */
+    }
+    
+    /* Đảm bảo chữ trắng trong ô tìm kiếm khi focus */
+    .select2-container .select2-search--inline .select2-search__field:focus {
+        color: #ffffff !important; /* Chữ trắng khi focus vào ô tìm kiếm */
+    }
+    
+    
+        /* Phong cách cho các tags */
+        .select2-container .select2-selection--multiple .select2-selection__choice {
+            background-color: #6a4c9c !important; /* Nền sáng cho tag */
+            color: #fff !important; /* Chữ trắng trong tag */
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 14px;
+            margin-right: 8px;
+            margin-top: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ cho tag */
+            transition: all 0.3s ease; /* Hiệu ứng mượt khi hover */
+            line-height: 1.5; /* Cân chỉnh chiều cao dòng */
+        }
+    
+        /* Hiệu ứng khi hover tag */
+        .select2-container .select2-selection--multiple .select2-selection__choice:hover {
+            background-color: #00c3ff !important; /* Nền sáng hơn khi hover */
+            transform: scale(1.05); /* Phóng to nhẹ khi hover */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Đổ bóng đậm hơn khi hover */
+        }
+    
+        /* Màu sắc chữ trong icon xóa */
+        .select2-container .select2-selection--multiple .select2-selection__choice__remove {
+            color: #fff !important; /* Màu trắng cho icon xóa */
+            font-weight: bold;
+            margin-left: 8px;
+            position: relative;
+            top: -2px; /* Di chuyển lên cao một chút */
+        }
+    
+        /* Màu khi hover icon xóa - chỉnh lại cho màu phù hợp */
+        .select2-container .select2-selection--multiple .select2-selection__choice__remove:hover {
+            color: #ff8c00 !important; /* Màu cam sáng khi hover */
+            background-color: #34344a !important; /* Nền tối, không làm rối mắt */
+            border-radius: 50%; /* Bo tròn icon xóa */
+        }
+    
+        /* Định dạng tổng thể của Select2 */
+        .select2-container .select2-selection--multiple {
+            background-color: #29293d !important;
+            border: 1px solid #4a4a65 !important;
+            color: #e4e4e7 !important;
+            border-radius: 8px;
+            padding: 5px;
+        }
+    
+        /* Phong cách cho trường tìm kiếm trong Select2 */
+        .select2-container .select2-search--inline .select2-search__field {
+            background-color: #29293d !important;
+            color: #e4e4e7 !important;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+    
+        #feature-image-preview {
+        max-width: 100%;
+        max-height: 200px;
+        text-align: center;
+    }
+    
+    #image-preview-container img {
+        max-width: 100px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }

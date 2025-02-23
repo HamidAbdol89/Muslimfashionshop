@@ -1,0 +1,58 @@
+/* Phân trang */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    list-style: none;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination .page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: #34495e;
+    border: 2px solid #5f6a6d;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Khi hover vào phân trang */
+.pagination .page-link:hover {
+    background: #9b59b6;
+    transform: scale(1.15);
+    box-shadow: 0px 8px 16px rgba(155, 89, 182, 0.4);
+}
+
+/* Khi phân trang đang hoạt động (active) */
+.pagination .page-item.active .page-link {
+    background: #00c3ff;
+    color: #fff;
+    font-size: 18px;
+    border: 2px solid #00c3ff;
+    box-shadow: 0px 6px 14px rgba(0, 195, 255, 0.6);
+}
+
+/* Khi phân trang bị disabled */
+.pagination .page-item.disabled .page-link {
+    background: #2b2b2b;
+    color: #777;
+    cursor: not-allowed;
+    border: 2px solid #2b2b2b;
+}
+
+
+/* Mờ dần nội dung bảng */
+tbody {
+    transition: opacity 0.3s ease-out;
+}

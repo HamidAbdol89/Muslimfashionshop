@@ -1,0 +1,262 @@
+ /* Bài viết chi tiết */
+ .blog-entry-title {
+    font-size: 1.75rem;
+    /* Tăng kích thước tiêu đề bài viết */
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+}
+
+.blog-entry-meta-link {
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.blog-entry-meta-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.blog-entry-meta-divider {
+    margin: 0 8px;
+    color: #ddd;
+}
+
+.blog-entry-author-ava img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+/* Bình luận */
+#comments {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#comments .fs-md {
+    font-size: 1rem;
+    color: #333;
+}
+
+#comments .fs-sm {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+#comments .d-flex {
+    margin-bottom: 20px;
+}
+
+.card-body {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+textarea.form-control {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    resize: none;
+}
+
+/* Cải thiện các nút */
+.btn-tag {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.btn-tag:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+.btn-social {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    color: #007bff;
+    padding: 8px 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.btn-social:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* Chia sẻ bài viết */
+.social-icons {
+    margin-top: 15px;
+}
+
+/* Các bài viết liên quan */
+.tns-carousel-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tns-carousel-inner article {
+    flex-basis: 32%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tns-carousel-inner article img {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    height: auto;
+}
+
+.tns-carousel-inner article h3 {
+    padding: 10px;
+    font-size: 1.125rem;
+    color: #333;
+    margin: 0;
+}
+
+.tns-carousel-inner article a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.tns-carousel-inner article a:hover {
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+.blog-entry-author-ava img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.blog-entry-meta-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-entry-meta-link:hover {
+    text-decoration: underline;
+}
+
+.btn-social {
+    background-color: #3b5998;
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-social:hover {
+    background-color: #2d4373;
+}
+
+.btn-social.bs-twitter {
+    background-color: #1da1f2;
+}
+
+.btn-social.bs-twitter:hover {
+    background-color: #0d8ce0;
+}
+
+.btn-social.bs-pinterest {
+    background-color: #e60023;
+}
+
+.btn-social.bs-pinterest:hover {
+    background-color: #c8001e;
+}
+
+textarea.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+textarea.form-control:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+button.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+button.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.tns-carousel-inner article {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tns-carousel-inner article:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .blog-entry-meta-link {
+        font-size: 14px;
+    }
+
+    .blog-entry-title {
+        font-size: 18px;
+    }
+}
+
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+    color: #3498db;
+}
+
+button[aria-label] {
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+button[aria-label]:focus {
+    outline: 2px solid #3498db;
+}

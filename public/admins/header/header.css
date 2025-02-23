@@ -1,0 +1,129 @@
+/* Thiết lập nền navbar sang trọng */
+.main-header.navbar {
+    background: linear-gradient(180deg, #1c1c28, #2e2e44); /* Màu sắc gradient hiện đại */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Bóng đổ nhẹ để nổi bật */
+    padding: 8px 20px; /* Khoảng cách vừa phải hơn */
+    border-radius: 8px; /* Viền mềm mại */
+    transition: all 0.3s ease-in-out; /* Hiệu ứng mượt khi thay đổi */
+}
+
+/* Các liên kết trong navbar */
+.navbar-nav .nav-link {
+    color: #ffffff;
+    font-weight: 500; /* Font nhẹ nhàng hơn */
+    font-size: 0.9rem; /* Giảm kích thước font */
+    padding: 8px 12px; /* Khoảng cách vừa phải */
+    text-transform: uppercase; /* Chữ in hoa */
+    transition: color 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển màu và phóng to khi hover */
+}
+
+/* Khi hover vào các liên kết trong navbar */
+.navbar-nav .nav-link:hover {
+    color: #00c3ff; /* Màu sắc nổi bật khi hover */
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Màu nền nhẹ khi hover */
+    border-radius: 4px; /* Viền mềm mại */
+}
+
+/* Các icon trong navbar */
+.navbar-nav .nav-link i {
+    font-size: 1.1rem; /* Tăng kích thước icon nhẹ */
+    margin-right: 6px; /* Khoảng cách giữa icon và chữ */
+    transition: transform 0.3s ease; /* Hiệu ứng phóng to nhẹ khi hover */
+}
+
+/* Khi hover vào icon trong navbar */
+.navbar-nav .nav-link:hover i {
+    transform: scale(1.1); /* Phóng to icon khi hover */
+}
+
+/* Phân cách giữa các mục navbar */
+.navbar-nav .nav-item:not(:last-child) {
+    margin-right: 15px; /* Khoảng cách giữa các item */
+}
+
+/* Tối ưu cho dropdown */
+.nav-item.dropdown .dropdown-menu {
+    background: #2e2e44;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Bóng đổ mượt mà */
+    border: none; /* Loại bỏ viền mặc định */
+}
+
+/* Các item trong dropdown */
+.nav-item.dropdown .dropdown-item {
+    color: #ffffff;
+    padding: 8px 18px; /* Khoảng cách cho dropdown items */
+    border-radius: 4px; /* Viền mềm mại cho items */
+    transition: background-color 0.3s ease; /* Hiệu ứng thay đổi nền khi hover */
+}
+
+/* Khi hover vào item trong dropdown */
+.nav-item.dropdown .dropdown-item:hover {
+    background-color: #00c3ff; /* Màu sắc khi hover */
+    color: #ffffff; /* Chữ trắng khi hover */
+}
+
+/* Thêm badge (notification, messages) */
+.navbar-nav .navbar-badge {
+    background-color: #ff4c4c;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 50%;
+    position: relative;
+}
+
+/* Navbar search block */
+.navbar-search-block form {
+    display: none; /* Ẩn ô tìm kiếm mặc định */
+    transition: all 0.3s ease-in-out; /* Hiệu ứng mượt khi mở */
+    width: 180px; /* Chiều rộng ô tìm kiếm khi mở */
+    position: absolute; /* Đặt ô tìm kiếm ở một vị trí cố định */
+    right: 20px; /* Căn phải cho phù hợp */
+}
+
+/* Mở rộng search khi click vào icon tìm kiếm */
+.navbar-search-block.open form {
+    display: block; /* Hiển thị ô tìm kiếm khi có class .open */
+    width: 200px; /* Kích thước ô tìm kiếm khi mở */
+}
+
+/* Input search */
+.navbar-search-block form input {
+    background-color: #2e2e44;
+    color: #fff;
+    border-radius: 25px;
+    padding: 6px 12px;
+    font-size: 0.9rem; /* Giảm kích thước font */
+    border: none;
+    width: 100%; /* Đảm bảo ô tìm kiếm chiếm hết chiều rộng */
+}
+
+/* Khi ô tìm kiếm mở, thay đổi icon search */
+.navbar-search-block.open .nav-link i {
+    transform: rotate(90deg); /* Quay icon tìm kiếm khi mở */
+    color: #00c3ff; /* Màu sắc khi ô tìm kiếm mở */
+}
+
+
+/* Input search */
+.navbar-search-block form input {
+    background-color: #2e2e44;
+    color: #fff;
+    border-radius: 25px;
+    padding: 6px 12px;
+    font-size: 0.8rem; /* Giảm kích thước font */
+    border: none;
+}
+
+/* Navbar fullscreen và control-sidebar icons */
+.navbar-nav .nav-item .nav-link i {
+    font-size: 1.3rem; /* Kích thước icon vừa phải */
+}
+
+/* Khi hover vào icons fullscreen và control-sidebar */
+.navbar-nav .nav-item .nav-link:hover i {
+    color: #00c3ff;
+}

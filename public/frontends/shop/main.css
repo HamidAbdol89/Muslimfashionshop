@@ -1,0 +1,135 @@
+    /* General Layout */
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f7f7f7;
+    }
+
+    /* Product Item Styles */
+    .product-item {
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        transition: all 0.4s ease;
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .product-item:hover {
+        transform: translateY(-15px) scale(1.07);
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Image Hover Effects */
+    .product-image img {
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .product-item:hover .product-image img {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+
+    /* Product Badge */
+    .product-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: #f7a800;
+        color: white;
+        padding: 5px 12px;
+        font-size: 1rem;
+        border-radius: 5px;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    /* Mobile-First Design (Responsive) */
+    @media (max-width: 768px) {
+        .product-item {
+            margin-bottom: 30px;
+        }
+    }
+   
+   
+   /* Nút "Thêm vào giỏ" */
+   .btn-buy {
+    background-image: linear-gradient(45deg, #28a745, #218838);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-buy:hover {
+    background-image: linear-gradient(45deg, #218838, #28a745);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+}
+
+
+    /* Icon trong nút */
+    .btn-buy i {
+        margin-right: 10px;  /* Khoảng cách giữa icon và chữ */
+        font-size: 1.3rem;  /* Kích thước icon */
+        transition: transform 0.3s ease;
+    }
+
+
+    /* Hiệu ứng khi nhấn */
+    .btn-buy:active {
+        transform: translateY(2px);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Hiệu ứng icon khi hover */
+    .btn-buy:hover i {
+        transform: translateX(8px);  /* Icon di chuyển một chút khi hover */
+    }
+
+    /* Hiệu ứng sóng (ripple effect) khi click vào nút */
+    .btn-buy:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+    }
+
+    @keyframes ripple {
+        0% {
+            transform: scale(0);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 0;
+        }
+    }
+
+    /* Tối ưu cho responsive */
+    @media (max-width: 768px) {
+        .btn-buy {
+            font-size: 1rem;  /* Giảm font-size cho thiết bị di động */
+        }
+    }

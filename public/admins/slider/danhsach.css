@@ -1,0 +1,98 @@
+ /* Áp dụng các style từ giao diện sản phẩm */
+ body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #121212, #1c1c28);
+    color: #ddd;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+overflow-y: auto; /* Cho phép cuộn dọc */
+max-height: 500px; /* Chiều cao tối đa của bảng */
+}
+
+.table-container {
+    margin-top: 5px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #2c2c39, #3d3d5e);
+    box-shadow: 0px 12px 60px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease;
+}
+
+
+.table th, .table td {
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #f1f1f1;
+    background-color: #2b2b36;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-out;
+}
+
+
+
+
+
+.header-title {
+    color: #00c3ff;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.header-title:hover {
+    transform: translateY(-5px);
+    color: #ff00ff;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: scale(1.1);
+}
+
+.product_image_150_100 {
+width: 100px; /* Đặt chiều rộng ảnh */
+height: auto; /* Đảm bảo tỷ lệ ảnh không bị méo */
+border-radius: 8px; /* Tùy chọn: Bo góc nhẹ */
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Tùy chọn: Đổ bóng */
+transition: transform 0.3s ease; /* Hiệu ứng hover */
+}
+
+.product_image_150_100:hover {
+transform: scale(1.1); /* Phóng to nhẹ khi hover */
+}
+
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #e5e7eb;
+}

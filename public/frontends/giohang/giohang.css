@@ -1,0 +1,209 @@
+  /* Điều chỉnh kích thước hình ảnh trong giỏ hàng */
+  .img-fluid {
+    width: 100px;  /* Kích thước vừa phải */
+    height: 100px; /* Đảm bảo hình ảnh vuông */
+    object-fit: cover; /* Cắt hình ảnh nếu cần */
+    transition: transform 0.3s ease-in-out;
+    border-radius: 8px; /* Thêm border-radius để các hình ảnh mềm mại hơn */
+}
+
+.img-fluid:hover {
+    transform: scale(1.1); /* Phóng to nhẹ khi hover */
+}
+
+/* Cải thiện giao diện bảng giỏ hàng */
+.table-auto th, .table-auto td {
+    padding: 12px 16px; /* Tăng khoảng cách để các phần tử không quá chật */
+    border: 1px solid #e2e8f0; /* Viền nhẹ cho bảng */
+    text-align: left;
+    font-size: 16px; /* Chữ dễ đọc hơn */
+}
+
+/* Màu sắc nền của các hàng trong bảng khi hover */
+.table-auto tbody tr:hover {
+    background-color: #f3f4f6; /* Nền sáng khi hover để dễ nhìn */
+}
+
+/* Cải thiện các nút thao tác trong bảng */
+.text-gray-500, .text-blue-500, .text-red-500 {
+    transition: color 0.3s ease-in-out;
+}
+
+.text-gray-500:hover, .text-blue-500:hover, .text-red-500:hover {
+    color: #2563eb; /* Đổi màu nút khi hover để dễ nhận diện */
+}
+
+/* Cải tiến nút Xóa tất cả */
+button#clear-cart-btn {
+    background-color: #dc2626; /* Màu nền đỏ cho nút Xóa tất cả */
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button#clear-cart-btn:hover {
+    background-color: #b91c1c; /* Màu đỏ đậm hơn khi hover */
+    transform: translateY(-2px); /* Nâng nút lên một chút */
+}
+
+/* Cải tiến nút Cập nhật giỏ hàng */
+button[type="submit"] {
+    background-color: #2563eb; /* Màu nền xanh cho nút Cập nhật */
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #1d4ed8; /* Màu xanh đậm hơn khi hover */
+    transform: translateY(-2px); /* Nâng nút lên một chút */
+}
+
+/* Cải tiến giao diện của các nút Thanh toán */
+a.block.w-full.bg-green-600 {
+    width: 100%;
+    padding: 14px;
+    background-color: #10b981; /* Màu nền xanh tươi */
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.block.w-full.bg-green-600:hover {
+    background-color: #059669; /* Màu nền thay đổi khi hover */
+    transform: translateY(-2px); /* Nâng nút lên một chút */
+}
+
+/* Điều chỉnh tiêu đề và thông tin giỏ hàng */
+.text-3xl {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1f2937; /* Màu sắc tối cho tiêu đề dễ nhìn */
+}
+
+.space-y-4 > div {
+    padding-bottom: 12px; /* Tăng khoảng cách giữa các phần */
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Cải thiện layout của giỏ hàng */
+.flex.items-center {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Điều chỉnh các liên kết trong phần giỏ hàng */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Điều chỉnh các thông tin sản phẩm trong giỏ hàng */
+.flex.items-center.space-x-4 {
+    align-items: center;
+    gap: 12px;
+}
+
+.text-left {
+    font-size: 5px; /* Đảm bảo font chữ dễ đọc cho tên sản phẩm */
+}
+
+/* Tăng chiều rộng của input số lượng để dễ thao tác */
+.w-12 {
+    width: 48px;
+    height: 32px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Cải tiến bảng thanh toán để cố định ở góc phải và không che navbar */
+aside {
+    position: fixed;
+    top: 80px;  /* Khoảng cách từ navbar (giả sử navbar cao 60px, bạn có thể điều chỉnh giá trị này nếu navbar của bạn có chiều cao khác) */
+    right: 20px;  /* Khoảng cách từ bên phải màn hình */
+    width: 300px;  /* Kích thước cố định cho bảng thanh toán */
+    background-color: #ffffff;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 1000; /* Đảm bảo bảng thanh toán luôn hiển thị trên các phần tử khác */
+}
+
+/* Điều chỉnh layout để bảng thanh toán không che khuất các phần khác */
+.container {
+    padding-right: 350px; /* Tăng thêm khoảng cách để tránh che khuất bảng thanh toán */
+}
+
+/* Cải tiến giao diện của phần thông tin thanh toán */
+.py-4.space-y-4 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.flex.justify-between.text-sm {
+    font-size: 14px; /* Cải thiện độ dễ đọc cho thông tin đơn hàng */
+}
+
+/* Hiển thị thông tin thanh toán với khoảng cách rõ ràng */
+.flex.justify-between.font-semibold.border-t.pt-4 {
+    font-size: 16px;
+}
+
+/* Cải thiện nút thanh toán */
+a.block.w-full.bg-green-600 {
+    background-color: #10b981;
+    color: white;
+    padding: 14px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.block.w-full.bg-green-600:hover {
+    background-color: #059669; /* Thay đổi màu khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nâng nhẹ khi hover */
+}
+
+/* Điều chỉnh kích thước chữ của tên sản phẩm */
+.text-base {
+font-size: 2rem; /* Kích thước vừa phải */
+font-weight: 500;
+}
+
+/* Điều chỉnh kích thước chữ của tiêu đề "Thông tin đơn hàng" */
+.text-lg {
+font-size: 2rem; /* Giảm kích thước tiêu đề */
+font-weight: 600;
+}
+
+@media (max-width: 768px) {
+.container {
+    padding-right: 20px;  /* Giảm khoảng cách bên phải trên các màn hình nhỏ */
+}
+.img-fluid {
+    width: 80px;  /* Giảm kích thước ảnh trên màn hình nhỏ */
+    height: 80px;
+}
+aside {
+    width: 250px;  /* Thu nhỏ bảng thanh toán trên màn hình nhỏ */
+}
+}
+a.block.w-full.bg-green-600 {
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ cho nút */
+}
+
+a.block.w-full.bg-green-600:hover {
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng bóng khi hover */
+}
+.table-auto th, .table-auto td {
+line-height: 1.6; /* Giúp cải thiện khoảng cách giữa các dòng */
+}
+
+
+
+

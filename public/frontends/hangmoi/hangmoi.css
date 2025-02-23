@@ -1,0 +1,6 @@
+    /* Cố định kích thước ảnh sản phẩm trong phần Hàng Mới */
+    #new-arrival .product-item .image-holder .product-image {
+        width: 300px;
+        height: 450px;
+        object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
+    }

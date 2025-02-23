@@ -1,0 +1,78 @@
+/* Thiết kế hiện đại cho dropdown */
+.btn-group {
+    position: relative;
+}
+
+/* Chỉnh lại màu nền và đường viền cho nút */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hiệu ứng hover trên nút */
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Chỉnh sửa dropdown */
+.dropdown-menu {
+    display: none; /* Ẩn dropdown mặc định */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    width: 200px; /* Đặt chiều rộng của dropdown */
+    background-color: #ffffff;
+}
+
+/* Kích hoạt dropdown khi hover */
+.btn-group:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Kiểu dáng cho các mục trong dropdown */
+.dropdown-item {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho mục dropdown */
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+    color: #007bff;
+}
+
+/* Canh phải cho dropdown */
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+
+
+/* Tùy chỉnh nút */
+.btn-custom {
+    background-color: #4CAF50; /* Màu xanh lá cây */
+    border-color: #4CAF50;     /* Đổi màu đường viền */
+    color: white;              /* Màu chữ trắng */
+}
+
+/* Hiệu ứng hover cho nút */
+.btn-custom:hover {
+    background-color: #45a049; /* Màu xanh đậm hơn khi hover */
+    border-color: #45a049;
+}

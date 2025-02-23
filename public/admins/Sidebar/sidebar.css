@@ -1,0 +1,149 @@
+/* Sidebar Styles */
+.main-sidebar {
+    background: linear-gradient(180deg, #1c1c28, #2e2e44);
+    color: #ffffff;
+    box-shadow: 0px 4px 15px rgba(58, 58, 84, 0.8), 
+                inset 0px 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.brand-link {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    background: #1c1c28;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 2px 5px rgba(0, 195, 255, 0.6);
+}
+
+.nav-sidebar .nav-link {
+    color: #d9d9e0 !important;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-sidebar .nav-link:hover {
+    background: #3a3a54;
+    box-shadow: 0px 4px 10px rgba(0, 195, 255, 0.6);
+    color: #00c3ff !important;
+}
+
+.nav-sidebar .nav-icon {
+    color: #00c3ff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.nav-sidebar .nav-link:hover .nav-icon {
+    transform: rotate(10deg);
+    box-shadow: 0px 4px 10px rgba(0, 195, 255, 0.5);
+}
+
+
+
+/* Thanh tìm kiếm VIP */
+.form-control-sidebar {
+    background: linear-gradient(90deg, #252535, #3a3a54);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px; /* Bo tròn góc */
+    padding: 10px 15px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.form-control-sidebar:focus {
+    outline: none;
+    border-color: #00c3ff; /* Viền sáng khi focus */
+    box-shadow: 0px 0px 8px rgba(0, 195, 255, 0.8); /* Ánh sáng xung quanh */
+}
+
+/* Nút tìm kiếm */
+.btn-sidebar {
+    background: linear-gradient(90deg, #00c3ff, #005f99);
+    border: none;
+    border-radius: 50%; /* Nút tròn */
+    padding: 8px 12px;
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 195, 255, 0.5);
+}
+
+.btn-sidebar:hover {
+    background: linear-gradient(90deg, #005f99, #00c3ff);
+    transform: scale(1.1); /* Tăng kích thước nhẹ khi hover */
+    box-shadow: 0px 6px 12px rgba(0, 195, 255, 0.8);
+}
+
+/* Icon tìm kiếm */
+.btn-sidebar i {
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn-sidebar:hover i {
+    transform: rotate(20deg); /* Xoay nhẹ icon khi hover */
+    color: #ffffff;
+}
+
+/* Gợi ý tìm kiếm */
+.ui-menu {
+    display: none; /* Ẩn khi không có dữ liệu */
+    background: #2c3e50; /* Màu nền tối đẹp mắt */
+    color: #ecf0f1; /* Chữ sáng dễ đọc */
+    border-radius: 8px; /* Bo tròn góc */
+    box-shadow: 0 4px 12px rgba(0, 195, 255, 0.3); /* Đổ bóng nhẹ tạo cảm giác nổi bật */
+    max-height: 300px; /* Giới hạn chiều cao */
+    overflow-y: auto; /* Cho phép cuộn nếu gợi ý dài */
+    opacity: 0; /* Ẩn khi không có dữ liệu */
+    transition: opacity 0.3s ease-in-out; /* Hiệu ứng mượt mà khi hiển thị */
+}
+
+/* Hiển thị gợi ý khi có dữ liệu */
+.ui-menu.ui-menu-open {
+    opacity: 1; /* Hiển thị khi có dữ liệu */
+}
+
+/* Các mục gợi ý */
+.ui-menu-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font chữ hiện đại */
+    font-size: 14px; /* Cỡ chữ vừa phải */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng chuyển màu nền khi hover */
+}
+
+/* Hiệu ứng khi hover vào một mục gợi ý */
+.ui-menu-item:hover {
+    background-color: #1abc9c; /* Màu nền tươi sáng khi hover */
+    color: #fff; /* Màu chữ trắng khi hover */
+    border-left: 5px solid #00c3ff; /* Đường viền trái giúp mục gợi ý nổi bật hơn */
+}
+
+/* Khi người dùng chọn một mục gợi ý */
+.ui-menu-item.selected {
+    background-color: #00c3ff; /* Màu nền khi chọn */
+    color: #ffffff; /* Chữ trắng khi chọn */
+    font-weight: bold; /* Chữ đậm khi chọn */
+}
+
+
+/* Đảm bảo dropdown hiển thị trên các phần tử khác */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    z-index: 9999; /* Đặt z-index cao để đảm bảo nó không bị chặn bởi các phần tử khác */
+    position: absolute; /* Đảm bảo dropdown được hiển thị chính xác */
+    top: 100%; /* Đặt dropdown xuất hiện ngay bên dưới menu cha */
+}
+
+/* Đảm bảo dropdown menu không bị ẩn và có hiệu ứng mờ */
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute; /* Đảm bảo dropdown hiển thị đúng vị trí */
+    z-index: 9999; /* Đặt z-index cao */
+}
+/* Đảm bảo sidebar cho phép dropdown mở rộng ra ngoài */
+.sidebar {
+    overflow: visible !important; /* Cho phép dropdown mở rộng ra ngoài sidebar */
+}

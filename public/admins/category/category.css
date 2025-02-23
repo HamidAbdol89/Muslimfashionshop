@@ -1,0 +1,105 @@
+/* Phong cách chung */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #121212, #1c1c28);
+    color: #ddd;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tối ưu hiệu ứng cho các phần tử */
+.table-container {
+    margin-top: 5px; /* Điều chỉnh bảng lên gần hơn */
+    border-radius: 15px;
+    background: linear-gradient(135deg, #2c2c39, #3d3d5e);
+    box-shadow: 0px 12px 60px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    transition: transform 0.3s ease-out;
+    will-change: transform; /* Cải thiện hiệu suất khi hover */
+}
+
+
+/* Tạo hiệu ứng 3D cho bảng */
+
+.table tr {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Di chuyển riêng từng hàng khi hover */
+.table tr:hover {
+    background-color: #44444e;
+    transform: translateY(-5px);
+}
+
+/* Giảm hiệu ứng hover cho các ô để cải thiện hiệu suất */
+.table th:hover, .table td:hover {
+    transform: scale(1.05);
+    background-color: #4d4d5e;
+}
+
+/* Cập nhật kiểu con trỏ khi hover vào ô */
+
+/* Dòng chữ "Danh sách Danh mục" */
+.header-title {
+    color: #00c3ff;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.header-title:hover {
+    color: #ff00ff;
+}
+
+/* Button Thêm Mới */
+.btn-success {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.btn-primary, .btn-danger {
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: scale(1.1);
+}
+
+/* Hiệu ứng động cho phân trang */
+.pagination .page-link {
+    background-color: #3e3e55;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: #007bff;
+    transform: scale(1.1);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+}
