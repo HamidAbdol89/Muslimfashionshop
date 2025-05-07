@@ -1,27 +1,39 @@
-FROM php:8.2-apache
+# Dockerfile
 
-# Cài extension và các package cần thiết
+FROM php:8.2-fpm
+
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
-    libzip-dev unzip git curl \
-    && docker-php-ext-install zip pdo pdo_mysql
+    build-essential \
+    libpng-dev \
+    libjpeg-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    git \
+    curl \
+    libzip-dev \
+    libpq-dev \
+    libcurl4-openssl-dev
 
-# Enable mod_rewrite
-RUN a2enmod rewrite
+# Install PHP extensions
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
-# Copy toàn bộ project vào container
-COPY . /var/www/html
-
-# Set quyền cho Laravel
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html/storage
-
-# Cài Composer
+# Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-WORKDIR /var/www/html
+# Set working directory
+WORKDIR /var/www
 
-RUN composer install --no-dev --optimize-autoloader \
-    && php artisan config:cache \
-    && php artisan route:cache
+COPY . .
 
-EXPOSE 80
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+
+RUN php artisan config:clear
+RUN php artisan config:cache
+
+# Expose port
+EXPOSE 8000
+
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
