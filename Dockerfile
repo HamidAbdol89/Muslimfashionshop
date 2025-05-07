@@ -29,11 +29,9 @@ WORKDIR /var/www
 COPY . .
 
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
-
 RUN php artisan config:clear
 RUN php artisan config:cache
 
-# Expose port
 EXPOSE 8000
 
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
