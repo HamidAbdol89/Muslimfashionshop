@@ -1,6 +1,8 @@
+# Dockerfile
+
 FROM php:8.2-fpm
 
-# Install dependencies
+# Cài các package cần thiết
 RUN apt-get update && apt-get install -y \
     nginx \
     git \
@@ -12,28 +14,29 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     libzip-dev \
-    libpq-dev
+    libpq-dev \
+    && apt-get clean
 
-# Install PHP extensions
+# Cài các PHP extension cần thiết
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
-# Install Composer
+# Cài Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Set working directory
+# Làm việc trong thư mục /var/www
 WORKDIR /var/www
 
-# Copy the application files
+# Copy các file dự án vào container
 COPY . .
 
-# Install Laravel dependencies
+# Cài đặt Laravel dependencies
 RUN composer install --optimize-autoloader --no-dev
 
-# Copy nginx config
+# Copy file cấu hình nginx
 COPY ./nginx.conf /etc/nginx/sites-available/default
 
-# Expose default port 80
+# Expose port 80 cho nginx
 EXPOSE 80
 
-# Start PHP-FPM and Nginx
-CMD service php8.2-fpm start && nginx -g "daemon off;"
+# Sử dụng lệnh khởi động đúng cách cho PHP-FPM và Nginx
+CMD php-fpm & nginx -g "daemon off;"
