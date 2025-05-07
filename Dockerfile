@@ -1,43 +1,42 @@
 FROM php:8.2-fpm
 
-# Install system dependencies
+# Cài package cần thiết
 RUN apt-get update && apt-get install -y \
-    build-essential \
+    nginx \
+    git \
+    curl \
+    unzip \
+    zip \
     libpng-dev \
     libjpeg-dev \
     libonig-dev \
     libxml2-dev \
-    zip \
-    unzip \
-    git \
-    curl \
     libzip-dev \
-    libpq-dev \
-    libcurl4-openssl-dev \
-    nginx
+    libpq-dev
 
-# Install PHP extensions
+# PHP extension
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
-# Install Composer
+# Cài Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Set working directory
+# Làm việc trong /var/www
 WORKDIR /var/www
 
 COPY . .
 
-# Run composer install
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
-RUN php artisan config:clear
-RUN php artisan config:cache
+# Cài đặt Laravel
+RUN composer install --optimize-autoloader --no-dev \
+    && php artisan config:clear \
+    && php artisan config:cache \
+    && php artisan route:cache \
+    && php artisan view:cache
 
-# Copy Nginx configuration from the root of your project
+# Copy nginx config
 COPY ./nginx.conf /etc/nginx/sites-available/default
 
-# Expose ports
-EXPOSE 8002
+# Expose default port 80
+EXPOSE 80
 
-
-# Start Nginx and PHP-FPM
-CMD service nginx start && php artisan serve --host=0.0.0.0 --port=8002
+# Start PHP-FPM và Nginx
+CMD service php8.2-fpm start && nginx -g "daemon off;"
