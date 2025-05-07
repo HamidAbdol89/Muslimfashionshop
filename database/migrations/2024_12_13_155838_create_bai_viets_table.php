@@ -12,7 +12,7 @@ return new class extends Migration
  Schema::create('baiviet', function (Blueprint $table) {
  $table->id();
  $table->foreignId('chude_id')->constrained('chude');
- $table->foreignId('user_id')->constrained('user');
+ $table->foreignId('user_id')->constrained('users');
  $table->text('tieude');
  $table->text('tieude_slug');
  $table->text('tomtat')->nullable();

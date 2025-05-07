@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: Muslimfashionshop
+    env: docker
+    plan: free
+    branch: master
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    buildCommand: ''
+    startCommand: 'apache2-foreground'

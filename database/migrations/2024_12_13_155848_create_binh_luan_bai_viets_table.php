@@ -12,7 +12,7 @@ return new class extends Migration
  Schema::create('binhluanbaiviet', function (Blueprint $table) {
  $table->id();
  $table->foreignId('baiviet_id')->constrained('baiviet');
- $table->foreignId('user_id')->constrained('user');
+ $table->foreignId('user_id')->constrained('users');
  $table->text('noidungbinhluan');
  $table->unsignedTinyInteger('kiemduyet')->default(0);
  $table->unsignedTinyInteger('kichhoat')->default(1);
