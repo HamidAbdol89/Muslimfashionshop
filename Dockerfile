@@ -35,7 +35,7 @@ RUN php artisan config:cache
 COPY nginx/default.conf /etc/nginx/sites-available/default
 
 # Expose the necessary ports
-EXPOSE 80
+EXPOSE 8002
 
 # Start both php-fpm and nginx
-CMD service nginx start && php-fpm
+CMD service nginx start && php artisan serve --host=0.0.0.0 --port=8002
