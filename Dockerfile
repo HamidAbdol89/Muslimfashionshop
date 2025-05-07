@@ -27,15 +27,17 @@ WORKDIR /var/www
 
 COPY . .
 
+# Run composer install
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 RUN php artisan config:clear
 RUN php artisan config:cache
 
-# Copy nginx configuration
-COPY nginx/default.conf /etc/nginx/sites-available/default
+# Copy Nginx configuration from the root of your project
+COPY ./nginx.conf /etc/nginx/sites-available/default
 
-# Expose the necessary ports
+# Expose ports
 EXPOSE 8002
 
-# Start both php-fpm and nginx
+
+# Start Nginx and PHP-FPM
 CMD service nginx start && php artisan serve --host=0.0.0.0 --port=8002
