@@ -1,5 +1,3 @@
-# Dockerfile
-
 FROM php:8.2-fpm
 
 # Install system dependencies
@@ -15,7 +13,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     libzip-dev \
     libpq-dev \
-    libcurl4-openssl-dev
+    libcurl4-openssl-dev \
+    nginx
 
 # Install PHP extensions
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
@@ -32,6 +31,11 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 RUN php artisan config:clear
 RUN php artisan config:cache
 
-EXPOSE 8000
+# Copy nginx configuration
+COPY nginx/default.conf /etc/nginx/sites-available/default
 
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+# Expose the necessary ports
+EXPOSE 80
+
+# Start both php-fpm and nginx
+CMD service nginx start && php-fpm
