@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     libzip-dev \
-    libpq-dev
+    libpq-dev \
+    && apt-get clean
 
 # PHP extension
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
@@ -27,6 +28,7 @@ COPY . .
 
 # Cài đặt Laravel
 RUN composer install --optimize-autoloader --no-dev \
+    && php artisan key:generate \
     && php artisan config:clear \
     && php artisan config:cache \
     && php artisan route:cache \
@@ -38,5 +40,5 @@ COPY ./nginx.conf /etc/nginx/sites-available/default
 # Expose default port 80
 EXPOSE 80
 
-# Start PHP-FPM và Nginx
+# Khởi động PHP-FPM và Nginx
 CMD service php8.2-fpm start && nginx -g "daemon off;"
