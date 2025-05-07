@@ -1,10 +1,40 @@
 services:
   - type: web
-    name: Muslimfashionshop
+    name: muslimfashionshop
     env: docker
     plan: free
-    branch: master
-    region: oregon
-    dockerfilePath: ./Dockerfile
-    buildCommand: ''
-    startCommand: 'apache2-foreground'
+    buildCommand: |
+      docker build -t muslimfashionshop .
+    startCommand: |
+      docker run -p 80:80 muslimfashionshop
+    envVars:
+      - key: APP_KEY
+        value: base64:a/UGYXkkmpUiCmnkQyHld1jbFfNyoOqBT9QOMzUNrAw=
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: mainline.proxy.rlwy.net
+      - key: DB_PORT
+        value: 41522
+      - key: DB_DATABASE
+        value: railway
+      - key: DB_USERNAME
+        value: root
+      - key: DB_PASSWORD
+        value: kWYptpququVaIlncLZvhRQgsPSclmTiZ
+      - key: MAIL_MAILER
+        value: smtp
+      - key: MAIL_HOST
+        value: smtp.gmail.com
+      - key: MAIL_PORT
+        value: 587
+      - key: MAIL_USERNAME
+        value: hamidabdol2002@gmail.com
+      - key: MAIL_PASSWORD
+        value: ifkrmvdoefysabta
+      - key: MAIL_ENCRYPTION
+        value: tls
+      - key: MAIL_FROM_ADDRESS
+        value: hamidabdol2002@gmail.com
+      - key: MAIL_FROM_NAME
+        value: MuslimFashionShop
